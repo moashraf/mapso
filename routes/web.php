@@ -10,15 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
- 
+  Route::resource('Projects','ProjectsController');
 Route::post('sendemail', 'SendMailController@sendMail');
 Route::any('/search', 'SearchController@search')  ;
  Route::any('/Subscribe', 'SubscribeController@Subscribe')  ;
  Route::get('/filters/{id}', 'boatsController@filters')  ;
  Route::get('/CSR', 'CSRController@CSR')  ;
  Route::get('/AboutUs', 'AboutUsController@AboutUs')  ;
- Route::get('/Projects', 'ProjectsController@Projects')  ;
- Route::get('/Services', 'ServicesController@Services')  ;
+  Route::get('/Services', 'ServicesController@Services')  ;
  Route::get('/SingleBoat/{id}', 'boatsController@get1')  ;
    Route::get('/SingleBoat_cat/{cat}', 'boatsController@getcat')  ;
  Route::get('/ContactUs', 'ContactUsController@home')  ;
