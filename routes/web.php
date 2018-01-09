@@ -11,6 +11,8 @@
 |
 */
   Route::resource('Projects','ProjectsController');
+    Route::resource('Projects2','ProjectsController');
+
 Route::post('sendemail', 'SendMailController@sendMail');
 Route::any('/search', 'SearchController@search')  ;
  Route::any('/Subscribe', 'SubscribeController@Subscribe')  ;
