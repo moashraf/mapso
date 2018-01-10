@@ -188,7 +188,21 @@
                          </li> 
                          
                          
-                        
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Projects <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('admin_Projects') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin_Projects') }}">  All </a>
+                                </li>
+                                <li {{ (Request::is('admin_Projects/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin_Projects/create') }}">  Add </a>
+                                </li>
+                                 
+                            </ul>
+                         </li> 
+                         
+
+                         
                         
                       
                     </ul>

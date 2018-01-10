@@ -2,8 +2,7 @@
 
 @section('content')
 
-
-
+ 
                 <div id="page-content" class="header-static  iner_page_posetion ">
 				
 				
@@ -134,101 +133,31 @@
       </tr>
     </thead>
     <tbody>
+
+
+
+
+  @foreach($Projects as $Projects1)    {{$Projects1->slogan}}  
+ 
+
       <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>  <tr>
-	          <td>2015</td>
-        <td>Suez Canal Authority</td>
-        <td>Port Said Engineering works	 </td>
-		 <td>Scorpion Series	</td>
-        <td>Suez Canal Authority</td>
-        <td>2 Fishing boats </td>
-      </tr>
+	      <td> {{$Projects1->Year}}   </td>
+        <td> {{$Projects1->Boat_Type}}   </td>
+        <td> {{$Projects1->Yard_Name}}    </td>
+        <td> {{$Projects1->Series}}  </td>
+        <td> {{$Projects1->Boat_Name}}  </td>
+        <td> {{$Projects1->Application}}  </td>
+       </tr> 
+
+
+@endforeach
+
       
     </tbody>
   </table>
+
+  {{ $Projects->links() }}
+
 </div>  
 
 

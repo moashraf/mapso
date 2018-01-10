@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
   Route::resource('Projects','ProjectsController');
 Route::post('sendemail', 'SendMailController@sendMail');
 Route::any('/search', 'SearchController@search')  ;
@@ -36,10 +26,15 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
 {
 	return View::make('documentation');
 });
-    /********************************* admin   ***********************************************************/
+    /*********************     ************ admin   *******************       ****************/
  Auth::routes();
   Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
  Route::get('profile', 'adminController@Sitesettings')->middleware('auth');
+
+
+
+     /*************************** Projects   admin ***********************************************/
+   Route::resource('admin_Projects','admin_Projects') ;
      /*************************** Vessels admin ***********************************************/
 Route::get('All_Vessels', 'adminController@All_Vessels')->middleware('auth');
 Route::get('add_Vessels', 'adminController@add_Vessels')->middleware('auth');
