@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
    use App\Slider;
  use App\Sitesettings;
  use App\Projects;
-
-class ProjectsController extends Controller
+ 
+class admin_Projects extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,16 +16,13 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-      $slider =   Slider::all();
-      $getallnews =   Sitesettings::all();
-      $Projects =   projects::paginate(20);
- 
- 
-       return view('Projects', compact(  'slider'  , 'getallnews' , 'Projects'  ));
+          
+            $slider =   Slider::all();
+            $getallnews =   Sitesettings::all();
+            $Projects =   projects::paginate(20);
+            return view('admin\all_Projects', compact(  'slider'  , 'getallnews' , 'Projects'  ));
 
-
-
-    }
+  }
 
     /**
      * Show the form for creating a new resource.
@@ -33,8 +30,13 @@ class ProjectsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {  
+              $slider =   Slider::all();
+            $getallnews =   Sitesettings::all();
+             return view('admin\Projects_add', compact(  'slider'  , 'getallnews'   ));
+
+
+
     }
 
     /**
@@ -45,7 +47,58 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+/*
+ $validator = $this->Validate(request(), [
+            'Year' => 'required',
+            'Boat_Type' => 'required',
+            'Yard_Name' => 'required',
+            'Series' => 'required',
+            'Boat_Name' => 'required',
+            'Application' => 'required'
+            
+         ]);
+
+Projects::create($validator);
+
+     return back();
+
+*/
+
+
+
+
+       try {
+     
+
+        $Projects = new Projects;
+        $Projects->Year = $request->Year;
+        $Projects->Boat_Type = $request->Boat_Type;
+        $Projects->Yard_Name = $request->Yard_Name;
+        $Projects->Series = $request->Series;
+        $Projects->Boat_Name = $request->Boat_Name;
+        $Projects->Application = $request->Application;
+        $Projects->save();
+     
+      
+       
+}  
+        catch (customException $e) {
+ // echo $e->errorMessage();
+    return back();
+
+}
+    return back();
+
+  
+
+
+
+
+
+
+
+
     }
 
     /**
@@ -90,7 +143,12 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+
+    $nerd = Projects::find($id);
+     $nerd->delete();
+       return back();   
+
+
     }
 }
-

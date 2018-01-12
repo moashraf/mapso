@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class LandingPage extends Model
 {
-    protected $table = 'landingpage';
+    protected $table  = 'landingpage';
 
 	}
