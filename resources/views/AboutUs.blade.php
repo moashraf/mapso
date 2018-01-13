@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
                 <div id="page-content" class="header-static iner_page_posetion ">
 				
 				

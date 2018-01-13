@@ -2,6 +2,31 @@
 @section('page_heading','Projects')
 
 @section('section')
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+@if ($session->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ session()->get("done") }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">

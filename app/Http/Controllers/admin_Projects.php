@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
    use App\Slider;
  use App\Sitesettings;
  use App\Projects;
+use Validator;
  
 class admin_Projects extends Controller
 {
@@ -43,13 +44,15 @@ class admin_Projects extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *   @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
-/*
- $validator = $this->Validate(request(), [
+
+
+       try {
+        $validator = Validator::make($request->all(), [
             'Year' => 'required',
             'Boat_Type' => 'required',
             'Yard_Name' => 'required',
@@ -58,20 +61,17 @@ class admin_Projects extends Controller
             'Application' => 'required'
             
          ]);
+ if ($validator->fails()) {
 
-Projects::create($validator);
-
-     return back();
-
-*/
+     return redirect('admin_Projects/create')->withErrors($validator)->withInput();
+         }else{
 
 
+session()->put('done','done insert ');
+//session()->push();
+//session()->flash();
 
-
-       try {
-     
-
-        $Projects = new Projects;
+$Projects = new Projects;
         $Projects->Year = $request->Year;
         $Projects->Boat_Type = $request->Boat_Type;
         $Projects->Yard_Name = $request->Yard_Name;
@@ -79,16 +79,18 @@ Projects::create($validator);
         $Projects->Boat_Name = $request->Boat_Name;
         $Projects->Application = $request->Application;
         $Projects->save();
-     
+ return back();
+
+
+        }
+
       
-       
 }  
         catch (customException $e) {
  // echo $e->errorMessage();
-    return back();
+ return back();
 
 }
-    return back();
 
   
 
