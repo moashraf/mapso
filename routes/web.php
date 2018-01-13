@@ -1,6 +1,16 @@
 <?php
 
-  Route::resource('Projects','ProjectsController');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "webwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebwebweb" middleware group. Now create something great!
+|
+*/
+   Route::resource('Projects','ProjectsController');
     Route::resource('Projects2','ProjectsController');
 
 Route::post('sendemail', 'SendMailController@sendMail');
