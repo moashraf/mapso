@@ -1,5 +1,4 @@
 <?php
-
    Route::resource('Projects','ProjectsController');
     Route::resource('Projects2','ProjectsController');
 
@@ -23,18 +22,10 @@ Route::get('/allnews', 'newsController@getallnews')  ;
 Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/main', 'sitesettingsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
-
- Route::get('/documentation', function()
-{
-	return View::make('documentation');
-});
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
   Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
  Route::get('profile', 'adminController@Sitesettings')->middleware('auth');
-
-
-
      /*************************** Projects   admin ***********************************************/
    Route::resource('admin_Projects','admin_Projects') ;
      /*************************** Vessels admin ***********************************************/

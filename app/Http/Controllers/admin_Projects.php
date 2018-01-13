@@ -52,22 +52,48 @@ class admin_Projects extends Controller
 
 
        try {
-        $validator = Validator::make($request->all(), [
-            'Year' => 'required',
+
+
+       
+
+
+   $rules = [
+
+            'Year' => 'required|numeric',
             'Boat_Type' => 'required',
             'Yard_Name' => 'required',
             'Series' => 'required',
             'Boat_Name' => 'required',
             'Application' => 'required'
-            
-         ]);
+
+    ];
+
+    $messages = [
+
+          'Year.numeric' => trans('ashraflang.figonum'),
+            'Boat_Type.required' => 'required',
+            'Yard_Name.required' => 'required',
+            'Series.required' => 'required',
+            'Boat_Name.required' => 'required',
+            'Application.required' => 'required'
+
+    ];
+
+
+
+
+    $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages );
+
+ 
+
+
  if ($validator->fails()) {
 
      return redirect('admin_Projects/create')->withErrors($validator)->withInput();
          }else{
 
 
-session()->put('done','done insert ');
+session()->flash('done','done insert ');
 //session()->push();
 //session()->flash();
 
