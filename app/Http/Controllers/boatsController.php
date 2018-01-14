@@ -26,19 +26,10 @@ class boatsController extends Controller
   
  
     }
-	
 
-    
-    
-    
     /****************************************************************************************************/
 
-    
-    
-    
-    
-    
-    
+  
 
 	public function filters ($id)
     {

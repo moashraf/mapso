@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
    use App\Slider;
  use App\Sitesettings;
  use App\Projects;
- use Validator;
-
+ 
 class admin_Projects extends Controller
 {
     /**
@@ -44,28 +43,40 @@ class admin_Projects extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *   @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
-/*
- $validator = $this->Validate(request(), [
-            'Year' => 'required',
+
+
+       try {
+
+
+       
+
+
+   $rules = [
+
+            'Year' => 'required|numeric',
             'Boat_Type' => 'required',
             'Yard_Name' => 'required',
             'Series' => 'required',
             'Boat_Name' => 'required',
             'Application' => 'required'
-            
-         ]);
 
-Projects::create($validator);
+    ];
 
-     return back();
+    $messages = [
 
-*/
+          'Year.numeric' => trans('ashraflang.figonum'),
+            'Boat_Type.required' => 'required',
+            'Yard_Name.required' => 'required',
+            'Series.required' => 'required',
+            'Boat_Name.required' => 'required',
+            'Application.required' => 'required'
 
+    ];
 
  $validator = Validator::make($request->all(), [
             'Year' => 'required',
@@ -84,10 +95,23 @@ Projects::create($validator);
 
 
 
-       try {
-     
 
-        $Projects = new Projects;
+    $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages );
+
+ 
+
+
+ if ($validator->fails()) {
+
+     return redirect('admin_Projects/create')->withErrors($validator)->withInput();
+         }else{
+
+
+session()->flash('done','done insert ');
+//session()->push();
+//session()->flash();
+
+$Projects = new Projects;
         $Projects->Year = $request->Year;
         $Projects->Boat_Type = $request->Boat_Type;
         $Projects->Yard_Name = $request->Yard_Name;
@@ -95,16 +119,18 @@ Projects::create($validator);
         $Projects->Boat_Name = $request->Boat_Name;
         $Projects->Application = $request->Application;
         $Projects->save();
-     
+ return back();
+
+
+        }
+
       
-       
 }  
         catch (customException $e) {
  // echo $e->errorMessage();
-    return back();
+ return back();
 
 }
-    return back();
 
   
 

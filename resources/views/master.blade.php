@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html lang="en-US">
     
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+ <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
 <head>
 
         <meta charset="UTF-8">
@@ -11,14 +11,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		 @foreach($getallnews as $hero)
 
-        <title> {{$hero->Websitename}} </title>
- 
+  
+   <script language="Javascript">
+  var msg1 = " <------ Welcome to Mapso ------> ";
+  var speed=100;
+  function ScrollTitle() {
+  document.title=msg1;
+  msg1=msg1.substring(1,msg1.length)+msg1.charAt(0);
+  setTimeout("ScrollTitle()",speed);
+  }
+  ScrollTitle();
+  </script>
+  <title> {{$hero->Websitename}} </title>
+
 <link rel='dns-prefetch' href='http://maps.googleapis.com/' />
 <link rel='dns-prefetch' href='http://oss.maxcdn.com/' />
 <link rel='dns-prefetch' href='http://s.w.org/' />
-<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="indexd784.html?feed=rss2" />
-<link rel="alternate" type="application/rss+xml" title=" &raquo; Comments Feed" href="indexa6da.html?feed=comments-rss2" />
- <link rel='stylesheet' id='contact-form-7-css'  href=  " {{ asset('wp-content/plugins/contact-form-7/includes/css/styles4906.css') }} " type='text/css' media='all' /> 
+  <link rel='stylesheet' id='contact-form-7-css'  href=  " {{ asset('wp-content/plugins/contact-form-7/includes/css/styles4906.css') }} " type='text/css' media='all' /> 
 <link rel='stylesheet' id='style-css'  href=  " {{ asset('wp-content/themes/dolomia/style29ba.css') }} "  type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-min-css'  href= " {{ asset('wp-content/themes/dolomia/assets/css/bootstrap/bootstrap.min66f2.css') }} "  type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-theme-min-css'  href=   " {{ asset('wp-content/themes/dolomia/assets/css/bootstrap/bootstrap-theme.min66f2.css') }} " type='text/css' media='all' />
@@ -175,9 +184,7 @@
 			
 			
 		@yield('content')	
-			
-			
-			
+		
 <!--  Footer. Class fixed for fixed footer  -->
             <footer class="  full-width">
                 <div class="container">
