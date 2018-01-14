@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
    use App\Slider;
  use App\Sitesettings;
  use App\Projects;
- 
+ use Validator;
+
 class admin_Projects extends Controller
 {
     /**
@@ -64,6 +65,21 @@ Projects::create($validator);
      return back();
 
 */
+
+
+ $validator = Validator::make($request->all(), [
+            'Year' => 'required',
+            'Boat_Type' => 'required',
+            'Yard_Name' => 'required',
+            'Series' => 'required',
+            'Boat_Name' => 'required',
+            'Application' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('post/create')->withErrors($validator) ->withInput();
+        }
+
 
 
 

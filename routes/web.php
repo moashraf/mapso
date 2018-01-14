@@ -34,7 +34,7 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
 
 
      /*************************** Projects   admin ***********************************************/
-   Route::resource('admin_Projects','admin_Projects') ;
+   Route::resource('admin_Projects','admin_Projects');
      /*************************** Vessels admin ***********************************************/
 Route::get('All_Vessels', 'adminController@All_Vessels')->middleware('auth');
 Route::get('add_Vessels', 'adminController@add_Vessels')->middleware('auth');
