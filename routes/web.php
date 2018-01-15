@@ -2,7 +2,21 @@
    Route::resource('Projects','ProjectsController');
     Route::resource('Projects2','ProjectsController');
 
-Route::post('sendemail', 'SendMailController@sendMail');
+ 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+  Route::resource('Projects','ProjectsController');
+    Route::resource('Projects2','ProjectsController');
+
+ Route::post('sendemail', 'SendMailController@sendMail');
 Route::any('/search', 'SearchController@search')  ;
  Route::any('/Subscribe', 'SubscribeController@Subscribe')  ;
  Route::get('/filters/{id}', 'boatsController@filters')  ;
