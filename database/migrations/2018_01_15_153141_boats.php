@@ -13,12 +13,13 @@ class Boats extends Migration
      */
     public function up()
     {
-     Schema::create('projects', function (Blueprint $table) {
+     Schema::create('boats', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('Boatsname', 200);
-            $table->string('Boatsimg', 200);
-            $table->string('Boatscat', 200);
+            $table->text('Boatsimg', 200);
+            $table->integer('Boatscat')->unsigned();
+            $table->foreign('Boatscat')->references('id')->on('boats_cat');
             $table->string('Boats_logo', 200);
             $table->string('Hull_Material', 200);
             $table->string('Length_Overall', 200);
@@ -26,7 +27,7 @@ class Boats extends Migration
             $table->string('Draught', 200);
             $table->string('Max_Speed', 200);
             $table->string('Displacement', 200);
-            $table->string('details_boats', 200);
+            $table->text('details_boats', 200);
             $table->string('VIDO', 200);
             $table->string('DataSheet', 200);
             $table->string('Application', 200);

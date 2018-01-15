@@ -116,7 +116,7 @@ $Boats = Boats::where('id', $id)->first();
         $flight->Boatsname = $request->Vessels_Name;   
  if($request->file('fileToUpload')!==NULL){        $flight->Boatsimg = "wp-content/uploads/2017/05/$imageName"; }
 
-        $flight->Boatscat = $request->Model;
+        //$flight->Boatscat = $request->Model;
 		 if($request->file('logo')!==NULL){           $flight->Boats_logo = "wp-content/uploads/2017/05/$imageNamelogo" ; }
 		 if($request->file('DataSheet')!==NULL){              $flight->DataSheet = "wp-content/uploads/2017/DataSheet/$imageNameDataSheet" ;  }
 
@@ -237,7 +237,7 @@ $namerand .=$photoexplode[0];
 
         $flight->Boatsname = $request->Vessels_Name;
         $flight->Boatsimg = "wp-content/uploads/2017/05/$imageName";
-        $flight->Boatscat = $request->Model;
+       //$flight->Boatscat = $request->Model;
         $flight->Boats_logo = "wp-content/uploads/2017/05/$imageNamelogo" ;
         $flight->Hull_Material = $request->Hull_Material;
         $flight->Length_Overall = $request->Length_Overall;
