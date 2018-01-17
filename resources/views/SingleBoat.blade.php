@@ -38,14 +38,9 @@
             
     
             
-             @foreach($boats_cat as $Boats1)
-  <li><a class="  <?php if( $SingleBoat1->Boatscat ==  $Boats1  ) {echo'activeclo'; }?> cat-righta  " 
-href="{{ URL::to('/SingleBoat_cat')}}/{{ $Boats1 }}  ">   {{ $Boats1 }}      </a></li>
-            
-            
-                      
- 						
-						     @endforeach
+    @foreach($SingleBoat as $SingleBoat12)
+  <li><a class=" " href=" "> {{  $SingleBoat12->get_full_cat_data()->first()->boats_cat_text  }}        </a></li>
+    @endforeach
             
             
       
@@ -115,9 +110,9 @@ href="{{ URL::to('/SingleBoat_cat')}}/{{ $Boats1 }}  ">   {{ $Boats1 }}      </a
 	  <li class="dropdown">
        <div class="form-group SingleBoat_filters ">
                         <select name="Series" class="form-control">
-                             @foreach($boats_cat as $Boats1)
+                             @foreach($SingleBoat as $Boats1)
 
-                            <option value="{{ $Boats1 }}">  {{ $Boats1 }}    </option>
+                            <option value=" ">   {{  $SingleBoat12->get_full_cat_data()->first()->boats_cat_text  }}    </option>
                           
  						
 						     @endforeach
@@ -215,8 +210,7 @@ Boat Series / Model:</b>    {{$SingleBoat12->Boatscat}}  <br>
  <b> Displacement:</b>  {{$SingleBoat12->Displacement}} <br>
  <b> Max. Speed: </b> {{$SingleBoat12->Max_Speed}} <br> 
  <b> Application: </b> {{$SingleBoat12->Application}} <br> 
-
-</p>
+ </p>
  </a>
  
  <div class="row   margin-leftright-null">

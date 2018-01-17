@@ -8,4 +8,8 @@ class Boats_cat extends Model
 {
     protected $table = 'boats_cat';
 
+
+
+
+
 	}

@@ -237,7 +237,7 @@ $namerand .=$photoexplode[0];
 
         $flight->Boatsname = $request->Vessels_Name;
         $flight->Boatsimg = "wp-content/uploads/2017/05/$imageName";
-       //$flight->Boatscat = $request->Model;
+       $flight->Boatscat = 11;
         $flight->Boats_logo = "wp-content/uploads/2017/05/$imageNamelogo" ;
         $flight->Hull_Material = $request->Hull_Material;
         $flight->Length_Overall = $request->Length_Overall;

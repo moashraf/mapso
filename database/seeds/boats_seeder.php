@@ -21,8 +21,8 @@ $add=new Boats;
 
 $add->Boatscat='1';
 $add->Boatsname="   database".rand(0,9);
-$add->Boatsimg="   databasedatabase".rand(0,9);
-$add->Boats_logo="   databasedatabasedatabase".rand(0,9);
+$add->Boatsimg="wp-content/uploads/2017/05/Layer-18.jpg";
+$add->Boats_logo="wp-content/uploads/2017/05/logo.png";
 $add->Hull_Material="   tabase".rand(0,9);
 $add->Length_Overall="  database".rand(0,9);
 $add->Beam_Overall="  database".rand(0,9);

@@ -61,18 +61,15 @@ class boatsController extends Controller
     
 	public function get1 ($id)
     {
-		    $boats_cat =  DB::table('boats_cat')->pluck('boats_cat_text');
- 
-  $slider =   Slider::all();
 
+
+   $slider =   Slider::all();
   $SingleBoat =   Boats::where('id', "$id")->get();
- $getcat=($SingleBoat[0]->Boatscat)  ;
+  $getcat=($SingleBoat[0]->Boatscat)  ;
    $cat =   Boats::where('Boatscat', "$getcat")->paginate(2); 
-  	      
+  $flight =   Sitesettings::all();
 
-    $flight =   Sitesettings::all();
-
-     return view('SingleBoat', ['SingleBoat' => $SingleBoat , 'boats_cat' => $boats_cat  ,'getallnews' => $flight , 'slider' => $slider , 'cat' => $cat]);
+  return view('SingleBoat', ['SingleBoat' => $SingleBoat   ,'getallnews' => $flight , 'slider' => $slider , 'cat' => $cat]);
 
   
  

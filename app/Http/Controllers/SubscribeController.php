@@ -15,9 +15,7 @@ class SubscribeController extends Controller
   	if(isset($request["Subscribe_email"]))	{ 
   
   $Subscribe_email=   htmlspecialchars($request["Subscribe_email"]);
-  
-  
-  $user = Subscribe::where('email',$Subscribe_email)->first();
+      $user = Subscribe::where('email',$Subscribe_email)->first();
 if (is_null($user)) {
    
     $Subscribe = new Subscribe();  
