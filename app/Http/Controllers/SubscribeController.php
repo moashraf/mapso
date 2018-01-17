@@ -10,6 +10,7 @@ class SubscribeController extends Controller
 	
 		public function Subscribe (Request $request)
     {
+    if(  $request->ajax()  {
 
    
   	if(isset($request["Subscribe_email"]))	{ 
@@ -33,7 +34,7 @@ if (is_null($user)) {
   	
   		}
 
-  
+   }
  
     }
 	
