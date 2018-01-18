@@ -28,8 +28,9 @@
 <button type="submit" class="Subscribe_button" >Subscribe</button>
 
 
-<div class="alert alert-success"   style="display: none;">
-  <strong  id="successsuccess" >  </strong>  
+<div class="alert alert-success"   id="successsuccess_alert"  style="display: none;">
+  <strong  id="successsuccess"  style="color: #6dab3c;
+    font-weight: bold;">  </strong>  
 </div>
 <br><br><br>
 
@@ -61,23 +62,29 @@ $('.shran').on('click', function(){
 
 
 $('.Subscribe_button').on('click', function(){
-
-    var form=$('#subscribe-form').serialize();
+  var form=$('#subscribe-form').serialize();
   var urlvar=$('#subscribe-form').attr('action');
- $.ajax({
+ 
+$.ajax({
+            url: urlvar,
+            type: "post",
+            data: form ,
+            beforeSend : function(){    $('#successsuccess').empty();
+ },
+error:function(error,exception){ 
+ 	alert("error");},
+            success: function (data) {
+ 
+ document.getElementById("successsuccess_alert").style.display = "block";
+  $('#successsuccess').append(data);
 
-url :urlvar,
-datatype :'json',
-data :form,
-type :'post',
-beforeSend : function(){ },
-error:function(error,exception){ alert(exception);},
-complete: function(data){      
- document.getElementById("successsuccess").style.display = "block";
- $('#successsuccess').append(data);
-      }
+      setTimeout(function(){  $('#successsuccess').empty(); $('.wrap, a').removeClass('active');  }, 3000);
 
- });
+
+   
+
+ 
+              }    });
 
 
    return false;
