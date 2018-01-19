@@ -23,7 +23,9 @@
   ScrollTitle();
   </script>
   <title> {{$hero->Websitename}} </title>
-
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
 <link rel='dns-prefetch' href='http://maps.googleapis.com/' />
 <link rel='dns-prefetch' href='http://oss.maxcdn.com/' />
 <link rel='dns-prefetch' href='http://s.w.org/' />
@@ -184,9 +186,7 @@
 			
 			
 		@yield('content')	
-			
-			
-			
+		
 <!--  Footer. Class fixed for fixed footer  -->
             <footer class="  full-width">
                 <div class="container">

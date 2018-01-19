@@ -1,35 +1,6 @@
 @extends('master')
 
 @section('content')
-             <!--  الاشتراك  -->
-
- <div class='wrap' >
-  <div class='content'>
-    <h3 class="Subscribe_h1">   Get Newsletter</h3>
-	<a class='button glyphicon  shran ' href='#' style="  bottom: auto;
-    top: 10px;      font-size: 18px;
-    color: #0091b3;
- transform: rotate(182deg);  
-    background: #ffffff;
-padding: 7px;    " >  
-    <i class="fa fa-times" aria-hidden="true"></i>
-
- </a>
-  <div class="subscribe-widget">
-<!-- form -->
-<form id="subscribe-form"  action="{{ URL::to('/Subscribe')  }} " >
-     {{ csrf_field() }}
-
-<input type="email" name="Subscribe_email" placeholder="Your Email Please" class=" form-control  Subscribe_input " required="">
-<button type="submit" class="Subscribe_button  ">Subscribe</button>
-</form>
-<!-- end form-->
-</div>
-   </div>
-</div>
-            <!--  الاشتراك -->
-
-<a class='button glyphicon  shran' href='#'>   <i class="fa fa-bookmark" aria-hidden="true"></i></a>
 
             <!--  END Header & Menu  -->
 
@@ -386,13 +357,6 @@ United Arab Emirates
   
      </div>
     </div>
-
-<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-
-
 <script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
  
 <script>
@@ -438,16 +402,8 @@ $(function() {
 
   revealOnScroll();
 });
-$('.shran').on('click', function(){
-  $('.wrap, a').toggleClass('active');
-  
-  return false;
-});
-
- 
-
- 
 
 </script>
+@include('Subscribe.Subscribe')
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
 @endsection

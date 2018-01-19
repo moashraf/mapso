@@ -26,19 +26,10 @@ class boatsController extends Controller
   
  
     }
-	
 
-    
-    
-    
     /****************************************************************************************************/
 
-    
-    
-    
-    
-    
-    
+  
 
 	public function filters ($id)
     {
@@ -70,18 +61,15 @@ class boatsController extends Controller
     
 	public function get1 ($id)
     {
-		    $boats_cat =  DB::table('boats_cat')->pluck('boats_cat_text');
- 
-  $slider =   Slider::all();
 
+
+   $slider =   Slider::all();
   $SingleBoat =   Boats::where('id', "$id")->get();
- $getcat=($SingleBoat[0]->Boatscat)  ;
+  $getcat=($SingleBoat[0]->Boatscat)  ;
    $cat =   Boats::where('Boatscat', "$getcat")->paginate(2); 
-  	      
+  $flight =   Sitesettings::all();
 
-    $flight =   Sitesettings::all();
-
-     return view('SingleBoat', ['SingleBoat' => $SingleBoat , 'boats_cat' => $boats_cat  ,'getallnews' => $flight , 'slider' => $slider , 'cat' => $cat]);
+  return view('SingleBoat', ['SingleBoat' => $SingleBoat   ,'getallnews' => $flight , 'slider' => $slider , 'cat' => $cat]);
 
   
  
@@ -95,16 +83,16 @@ class boatsController extends Controller
     
 		public function getcat ( $cat)
     {
+
+      
     $boats_cat =  DB::table('boats_cat')->pluck('boats_cat_text');
-
- $slider =   Slider::all();
-  $cat = Boats::where('Boatscat', "$cat")->paginate(2); 
-     $getid=($cat[0]->id)  ;
+    $slider =   Slider::all();
+    $cat = Boats::where('Boatscat', "$cat")->paginate(2); 
+    $getid=($cat[0]->id)  ;
     $SingleBoat =   Boats::where('id', "$getid")->get(); 
-			   
     $flight =   Sitesettings::all();
-
-     return view('SingleBoat', ['SingleBoat' => $SingleBoat ,'getallnews' => $flight ,'boats_cat' => $boats_cat , 'slider' => $slider , 'cat' => $cat]);
+    $nodata="No data";
+     return view('SingleBoat', ['SingleBoat' => $SingleBoat ,'getallnews' => $flight ,'boats_cat' => $boats_cat , 'slider' => $slider , 'cat' => $cat, 'nodata' => $nodata]);
 
   
  

@@ -9,7 +9,10 @@
         "acacha/admin-lte-template-laravel": "4.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+<<<<<<< HEAD
         "laravelcollective/html": "^5.4.0",
+=======
+>>>>>>> 3f28ec9e7e816c57c7e4e18225fbffc370ed2ff5
         "laravelrus/sleepingowl": "4.*@dev"
     },
     "require-dev": {
