@@ -22,14 +22,6 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/main', 'sitesettingsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
     /*********************     ************ admin   *******************       ****************/
-
-
-
-
-
-
-
-
  Auth::routes();
   Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
  
@@ -39,13 +31,8 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
 
 
  Route::get('profile', 'adminController@Sitesettings') ;
-
-          
-   Route::resource('admin_Projects','admin_Projects');
-
-
-
-      /*************************** Vessels admin ***********************************************/
+Route::resource('admin_Projects','admin_Projects');
+/*************************** Vessels admin ***********************************************/
 Route::get('All_Vessels', 'adminController@All_Vessels') ;
 Route::get('add_Vessels', 'adminController@add_Vessels') ;
 Route::post('add_Vessels_save', 'adminController@add_Vessels_save') ;
@@ -100,11 +87,8 @@ Route::get('add_testimonial', 'admin_testimonialController@add_testimonial') ;
 Route::post('add_testimonial_save', 'admin_testimonialController@add_testimonial_save') ;
 Route::post('destroy_testimonial/{id}', 'admin_testimonialController@destroy') ; 
 Route::get('update_testimonial/{id}', 'admin_testimonialController@update_testimonial') ;
-Route::post('update_testimonial_save/{id}', 'admin_testimonialController@update_testimonial_save') ;
- 
-
-
-});
+Route::post('update_testimonial_save/{id}', 'admin_testimonialController@update_testimonial_save');
+ });
 
 
 
@@ -123,19 +107,3 @@ Route::get('All_auth', [
 ]) ;
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

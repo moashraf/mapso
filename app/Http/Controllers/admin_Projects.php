@@ -92,14 +92,7 @@ class admin_Projects extends Controller
             return redirect('post/create')->withErrors($validator) ->withInput();
         }
 
-
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 3f28ec9e7e816c57c7e4e18225fbffc370ed2ff5
+ 
     $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages );
 
  
