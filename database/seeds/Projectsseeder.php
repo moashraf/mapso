@@ -14,12 +14,13 @@ class Projectsseeder extends Seeder
 for ($i=0; $i <10 ; $i++) { 
 $add=new projects;
 
-$add->Year=rand(0,9);
-$add->Boat_Type="   dis".rand(0,9);
-$add->Yard_Name="   dis".rand(0,9);
-$add->Series="   dis".rand(0,9);
-$add->Boat_Name="   dis".rand(0,9);
-$add->Application="   Application".rand(0,9);
+$add->Year="2015";
+$add->Boat_Type="   Suez Canal Authority	".rand(0,9);
+$add->Yard_Name="   Port Said Engineering works	".rand(0,9);
+$add->Series="   47 - CML	".rand(0,9);
+$add->Boat_Name="   Fahd 1	".rand(0,9);
+$add->Application="     Boat
+".rand(0,9);
 
 
 $add->save();
