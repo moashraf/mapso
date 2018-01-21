@@ -13,12 +13,8 @@ class Boats_catSeeder extends Seeder
     {
 for ($i=0; $i <4 ; $i++) { 
 $add=new Boats_cat;
- 
-$add->boats_cat_text="NanoAir ";
- 
- 
-
-$add->save();
+ $add->boats_cat_text="NanoAir".rand(0,9);
+ $add->save();
 }
     }
 }

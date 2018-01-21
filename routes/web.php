@@ -26,7 +26,7 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
   
      /*************************** Projects   admin ***********************************************/
 
-         Route::group(['middleware'=>'auth'], function(){
+         Route::group(['middleware'=>'auth' , 'middleware'=>'throttle:20,1' ], function(){
 
 
  Route::get('profile', 'adminController@Sitesettings') ;

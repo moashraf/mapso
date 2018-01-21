@@ -20,9 +20,7 @@
 
 		<tr>
  	<td>   {{ $Boats1->boats_cat_text  }}  </td>
- 
-
-            
+             
   						<td>
   {{ Form::open(array('url' => 'destroy_Boats_cat/' . $Boats1->id, 'class' => 'pull-right')) }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
