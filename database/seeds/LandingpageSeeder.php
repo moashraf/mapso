@@ -11,7 +11,7 @@ class LandingpageSeeder extends Seeder
      */
     public function run()
     {
-for ($i=0; $i <4 ; $i++) { 
+for ($i=0; $i <3 ; $i++) { 
 $add=new Landingpage;
  
 $add->mainimg="wp-content/uploads/2017/05/l2.png";

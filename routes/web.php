@@ -23,8 +23,7 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
-  Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
- 
+  
      /*************************** Projects   admin ***********************************************/
 
          Route::group(['middleware'=>'auth'], function(){
@@ -88,22 +87,15 @@ Route::post('add_testimonial_save', 'admin_testimonialController@add_testimonial
 Route::post('destroy_testimonial/{id}', 'admin_testimonialController@destroy') ; 
 Route::get('update_testimonial/{id}', 'admin_testimonialController@update_testimonial') ;
 Route::post('update_testimonial_save/{id}', 'admin_testimonialController@update_testimonial_save');
+
+
+ /*******************************  user  admin *******************************************/
+
+Route::post('destroy_auth/{id}', 'Auth\RegisterController@destroy') ; 
+Route::get('auth/register1', ['as' => 'register1', 'uses' => 'Auth\RegisterController@in']) ;
+Route::get('All_auth', ['as' => 'All_auth', 'uses' => 'Auth\RegisterController@All_auth']) ;
+
+
+
  });
 
-
-
-    /*******************************  user  admin *******************************************/
-
- Route::post('destroy_auth/{id}', 'Auth\RegisterController@destroy') ; 
-
-Route::get('auth/register1', [
-  'as' => 'register1', 
-  'uses' => 'Auth\RegisterController@in'
-]) ;
-
-Route::get('All_auth', [
-  'as' => 'All_auth', 
-  'uses' => 'Auth\RegisterController@All_auth'
-]) ;
-
- 

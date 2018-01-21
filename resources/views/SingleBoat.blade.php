@@ -138,6 +138,9 @@
                         </select>
                     </div>
       </li>
+
+
+
 	<button type="submit" id="btn-filter-pending" class="btn btn-default SingleBoat_filters ">Update</button> 
     </form>	</ul>
     <div class="col-sm-3 col-md-3">
@@ -161,6 +164,16 @@
                         </select>
                     </div>
     </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+       <div class="form-group SingleBoat_filters ">
+                         <p> <b>you are here : </b> {{Request::segment(1)}} / {{Request::segment(2)}} </p>
+                    </div>
+    </ul>
+
+
+
   </div><!-- /.navbar-collapse -->
 </nav>
  
