@@ -1,5 +1,11 @@
 <?php
 
+
+
+  Route::resource('facebook','facebookController');
+
+
+
   Route::resource('Projects','ProjectsController');
   Route::post('sendemail', 'SendMailController@sendMail');
  Route::any('/search', 'SearchController@search')  ;

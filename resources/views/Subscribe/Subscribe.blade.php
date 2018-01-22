@@ -24,11 +24,11 @@
 <form id="subscribe-form"  action="{{ URL::to('/Subscribe')  }} " >
      {{ csrf_field() }}
 
-<input type="email" name="Subscribe_email" placeholder="Your Email Please" class=" form-control  Subscribe_input " required="">
+<input type="email" name="Subscribe_email" placeholder="Your Email Please" class=" form-control  Subscribe_input " required="required">
 <button type="submit" class="Subscribe_button" >Subscribe</button>
+        <a   href='{{ URL::to('/facebook')  }}'>   <i class="fa fa-facebook" aria-hidden="true"></i></a>
 
-
-<div class="alert alert-success"   id="successsuccess_alert"  style="display: none;">
+ <div class="alert alert-success"   id="successsuccess_alert"  style="display: none;">
   <strong  id="successsuccess"  style="color: #6dab3c;
     font-weight: bold;">  </strong>  
 </div>

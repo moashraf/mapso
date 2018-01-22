@@ -14,7 +14,10 @@ class DatabaseSeeder extends Seeder
    
 
 
-   /*  $this->call(AboutusSeeder::class); 
+   /* 
+        $this->call(BrandSeeder::class); 
+
+ $this->call(AboutusSeeder::class); 
      $this->call(Boats_catSeeder::class); 
      $this->call(Boatsseeder::class); 
      $this->call(ContactusSeeder::class); 

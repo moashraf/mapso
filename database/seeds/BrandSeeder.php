@@ -11,7 +11,7 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-for ($i=0; $i <4 ; $i++) { 
+for ($i=0; $i <10 ; $i++) { 
 $add=new Brand;
  
 $add->imgurl="wp-content/uploads/logo/Voith.jpg";

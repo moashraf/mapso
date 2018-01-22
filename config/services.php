@@ -35,4 +35,13 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+
+
+        'facebook' => [
+            'client_id' => '248535075684214',        
+            'client_secret' => '1979e9b06c0a20a8898ddc58faf1d767',  
+            'redirect' => 'http://localhost/mapso/public/callback',
+        ],
+
+
 ];
