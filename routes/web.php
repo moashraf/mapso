@@ -29,10 +29,11 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
-  
+    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
      /*************************** Projects   admin ***********************************************/
 
-         Route::group(['middleware'=>'auth' , 'middleware'=>'throttle:20,1' ], function(){
+         Route::group(['middleware'=>'auth' ], function(){
 
 
  Route::get('profile', 'adminController@Sitesettings') ;
