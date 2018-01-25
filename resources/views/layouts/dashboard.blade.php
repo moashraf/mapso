@@ -54,11 +54,11 @@
                          <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>  Our Vessels   <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('All_Vessels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('All_Vessels') }}">  All </a>
+                                <li {{ (Request::is('admin_Vessels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin_Vessels') }}">  All </a>
                                 </li>
-								<li {{ (Request::is('add_Vessels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('add_Vessels') }}">  Add </a>
+								<li {{ (Request::is('admin_Vessels/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin_Vessels/create') }}">  Add </a>
                                 </li>
                                  
                             </ul>

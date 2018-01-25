@@ -1,11 +1,5 @@
 <?php
-
-
-
   Route::resource('facebook','facebookController');
-
-
-
   Route::resource('Projects','ProjectsController');
   Route::post('sendemail', 'SendMailController@sendMail');
  Route::any('/search', 'SearchController@search')  ;
@@ -13,9 +7,9 @@
  Route::get('/filters/{id}', 'boatsController@filters')  ;
  Route::get('/CSR', 'CSRController@CSR')  ;
  Route::get('/AboutUs', 'AboutUsController@AboutUs')  ;
-  Route::get('/Services', 'ServicesController@Services')  ;
+Route::get('/Services', 'ServicesController@Services')  ;
  Route::get('/SingleBoat/{id}', 'boatsController@get1')  ;
-   Route::get('/SingleBoat_cat/{cat}', 'boatsController@getcat')  ;
+ Route::get('/SingleBoat_cat/{cat}', 'boatsController@getcat')  ;
  Route::get('/ContactUs', 'ContactUsController@home')  ;
  Route::get('/TESTIMONIALS', 'TESTIMONIALSController@home')  ;
  Route::get('/References', 'boatsController@References')  ;
@@ -29,19 +23,20 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
-
-     /*************************** Projects   admin ***********************************************/
-
+ /*************************** Projects   admin ***********************************************/
  Route::group(['middleware'=>'auth' ], function(){
  Route::get('profile', 'adminController@Sitesettings') ;
 Route::resource('admin_Projects','admin_Projects');
 /*************************** Vessels admin ***********************************************/
+Route::resource('admin_Vessels','AdminVesselscontroller');
+/*
 Route::get('All_Vessels', 'adminController@All_Vessels') ;
 Route::get('add_Vessels', 'adminController@add_Vessels') ;
 Route::post('add_Vessels_save', 'adminController@add_Vessels_save') ;
 Route::get('update_Vessels/{id}', 'adminController@update_Vessels') ;
 Route::post('update_Vessels_save/{id}', 'adminController@update_Vessels_save') ;
-Route::post('destroy/{id}', 'adminController@destroy') ;
+Route::post('destroy/{id}', 'adminController@destroy') ;*/
+
      /******************************* news admin *******************************************/
 Route::get('All_news', 'admin_news_Controller@All_news') ; 
 Route::get('add_news', 'admin_news_Controller@add_news') ;
