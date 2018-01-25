@@ -29,13 +29,10 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
  Route::get('/addsitesettings', 'sitesettingsController@addsitesettings')  ;
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
-    Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
      /*************************** Projects   admin ***********************************************/
 
-         Route::group(['middleware'=>'auth' ], function(){
-
-
+ Route::group(['middleware'=>'auth' ], function(){
  Route::get('profile', 'adminController@Sitesettings') ;
 Route::resource('admin_Projects','admin_Projects');
 /*************************** Vessels admin ***********************************************/
@@ -97,7 +94,7 @@ Route::post('update_testimonial_save/{id}', 'admin_testimonialController@update_
 
 
  /*******************************  user  admin *******************************************/
-
+ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('destroy_auth/{id}', 'Auth\RegisterController@destroy') ; 
 Route::get('auth/register1', ['as' => 'register1', 'uses' => 'Auth\RegisterController@in']) ;
 Route::get('All_auth', ['as' => 'All_auth', 'uses' => 'Auth\RegisterController@All_auth']) ;

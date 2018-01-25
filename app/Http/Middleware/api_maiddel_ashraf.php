@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminMiddleware
+class api_maiddel_ashraf
 {
     /**
      * Handle an incoming request.
@@ -17,10 +17,10 @@ class AdminMiddleware
     {
 
 
+       // if (!Auth()->check()) {
+           // return dd ('not ');
+      //  }
 
-         if (!Auth::guard($guard)->check()) {
-            return redirect ('/home');
-        }
 
 
 

@@ -13,9 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-     Route::group(['middleware'=>'auth:api' ,'prefix'=>'mop'], function(){
+     Route::group(['prefix'=>'mop' , 'middleware'=>'auth:api'], function(){
  
-   Route::resource('Projects','apiController');
+   Route::resource('data','apiController');
 
 
  });

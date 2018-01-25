@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-   use App\Slider;
-
+  
 class apiController extends Controller
 {
     /**
@@ -14,10 +12,10 @@ class apiController extends Controller
      */
     public function index()
     {
-      $slider =   Slider::all();
+     // $slider =   Slider::all();
       
  
-       return   $slider ;
+       return   "test" ;
 
 
 
