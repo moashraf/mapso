@@ -18,10 +18,7 @@
 
                                 <li style="background-image:url(    {{ URL::to('/').'/'.$SingleBoat1->img  }}     )">
                   <div class="container text" style="    top: 85%; "> 
-  <h5 class="   SingleBoat_h2">  {{$SingleBoat1->Title}}  
-			   
-      
- </h5>
+    <h5 class="   SingleBoat_h2">  <?php  $small = substr($SingleBoat1->Title , 0, 30);  echo "$small".".."; ?>  </h5>
                     </div>
                  </li>  @endforeach
                                
@@ -99,8 +96,7 @@
                                             </div>
                                             <div class="col-md-6 padding-leftright-null"  style="    width: 60%;" >
                                                 <div class="content" >
-  <p >  
-   {{$SingleBoat12->content}}    </p>
+  <p> <?php  $small = substr($SingleBoat12->content , 0, 400);  echo "$small"."...."; ?>  </p>
 <a href=" "> <span class="category" style="   float: right; color: #3aa9c5;">  >   Details   </span>   </a>                                                
                                                     
                                                 </div>

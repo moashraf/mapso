@@ -91,14 +91,9 @@ class admin_Projects extends Controller
         if ($validator->fails()) {
             return redirect('post/create')->withErrors($validator) ->withInput();
         }
-
+     $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages );
  
-    $validator = \Illuminate\Support\Facades\Validator::make($request->all(), $rules, $messages );
-
- 
-
-
- if ($validator->fails()) {
+  if ($validator->fails()) {
 
      return redirect('admin_Projects/create')->withErrors($validator)->withInput();
          }else{

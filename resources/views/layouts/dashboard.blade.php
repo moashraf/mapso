@@ -83,11 +83,11 @@
                           <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>  Our News   <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('All_news') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('All_news') }}">  All </a>
+                                <li {{ (Request::is('admin/admin_news/') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_news/') }}">  All </a>
                                 </li>
-								<li {{ (Request::is('add_news') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('add_news') }}">  Add </a>
+								<li {{ (Request::is('admin/admin_news/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_news/create') }}">  Add </a>
                                 </li>
                                  
                             </ul>
