@@ -5,9 +5,11 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-   						   <?php echo Form::open(array('url' => array('update_Vessels_save', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
+   						   <?php echo Form::open(array('url' => array('admin/admin_Vessels', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+{{ method_field('PUT') }}
+
 
             <div class="form-group" >
                 <label>Vessels Name</label>
@@ -43,8 +45,8 @@
             </div>
             
             	<div class="form-group">
-                <label> VIDO</label>
-                <input class="form-control" placeholder=" VIDO" name="VIDO"  required="required"   value=" @if ($Boats['VIDO']) {{ $Boats['VIDO'] }}  @endif"  >
+                <label> vidoe  </label>
+                <input class="form-control" placeholder="vidoe " name="VIDO"  required="required"   value=" @if ($Boats['VIDO']) {{ $Boats['VIDO'] }}  @endif"  >
             </div>
             
             
@@ -81,14 +83,12 @@
             <div class="form-group">
                 <label> Model</label>
                 <select class="form-control"  name="Model"  required="required"    >
-                              @foreach($boats_cat as $Boats1)
-
-                            <option value="{{ $Boats1 }}">  {{ $Boats1 }}    </option>
-                          
- 						
-						     @endforeach
- 						
-						
+                            @foreach($boats_cat as $Boats1)
+    <option value="{{ $Boats1->id }}" @if (  $Boats1->id==$Boats['Boatscat'] ) {!  selected='selected' !}  @endif  > 
+    @if (  $Boats1 ) {{   $Boats1->boats_cat_text}}  @endif
+       </option>
+                              @endforeach
+ 								
                  </select>
             </div>
              			<br>

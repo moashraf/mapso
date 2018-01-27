@@ -13,8 +13,8 @@
 
   
    <script language="Javascript">
-  var msg1 = " <------ Welcome to Mapso ------> ";
-  var speed=100;
+  var msg1 = " Welcome to Mapso  ";
+  var speed=500;
   function ScrollTitle() {
   document.title=msg1;
   msg1=msg1.substring(1,msg1.length)+msg1.charAt(0);

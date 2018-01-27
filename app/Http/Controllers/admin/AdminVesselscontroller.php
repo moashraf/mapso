@@ -3,7 +3,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
   use App\Sitesettings;
   use App\Boats;
+    use App\Singleboatgallery;
   use DB;
+    use App\Boats_cat;
+
 
 class AdminVesselscontroller extends Controller
 
@@ -19,7 +22,7 @@ class AdminVesselscontroller extends Controller
         {
         $Sitesettings = Sitesettings::all();
         $Boats = Boats::paginate(10);
-        return view('admin.table', ['Sitesettings' => $Sitesettings, 'Boats' => $Boats]);
+        return view('admin.all_Boats', ['Sitesettings' => $Sitesettings, 'Boats' => $Boats]);
         }
 
     /**
@@ -32,8 +35,8 @@ class AdminVesselscontroller extends Controller
     function create()
         {
         $Sitesettings = Sitesettings::all();
-        $boats_cat = DB::table('boats_cat')->pluck('boats_cat_text');
-        return view('admin.form', ['Sitesettings' => $Sitesettings, 'boats_cat' => $boats_cat]);
+        $boats_cat = Boats_cat::all();
+         return view('admin.Vessels_add', ['Sitesettings' => $Sitesettings, 'boats_cat' => $boats_cat]);
         }
 
     /**
@@ -46,6 +49,8 @@ class AdminVesselscontroller extends Controller
 
     function store(Request $request)
         {
+
+            //dd( $request);
         try
             {
             $nameDataSheet = "DataSheet" . rand();
@@ -60,7 +65,7 @@ class AdminVesselscontroller extends Controller
             $flight = new Boats;
             $flight->Boatsname = $request->Vessels_Name;
             $flight->Boatsimg = "wp-content/uploads/2017/05/$imageName";
-            $flight->Boatscat = 11;
+            $flight->Boatscat = $request->Model;
             $flight->Boats_logo = "wp-content/uploads/2017/05/$imageNamelogo";
             $flight->Hull_Material = $request->Hull_Material;
             $flight->Length_Overall = $request->Length_Overall;
@@ -132,7 +137,7 @@ class AdminVesselscontroller extends Controller
             {
             $Sitesettings = Sitesettings::all();
             $Boats = Boats::where('id', $id)->first();
-            $boats_cat = DB::table('boats_cat')->pluck('boats_cat_text');
+          $boats_cat = Boats_cat::all();
             return view('admin.Vessels_update', ['Sitesettings' => $Sitesettings, 'Boats' => $Boats, 'boats_cat' => $boats_cat]);
             }
 
@@ -191,7 +196,7 @@ class AdminVesselscontroller extends Controller
                 $flight->Boatsimg = "wp-content/uploads/2017/05/$imageName";
                 }
 
-            // $flight->Boatscat = $request->Model;
+             $flight->Boatscat = $request->Model;
 
             if ($request->file('logo') !== NULL)
                 {

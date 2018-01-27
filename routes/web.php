@@ -24,19 +24,12 @@ Route::get('/Singlenews/{id}', 'newsController@home')  ;
     /*********************     ************ admin   *******************       ****************/
  Auth::routes();
  /*************************** Projects   admin ***********************************************/
- Route::group(['middleware'=>'auth' ], function(){
+ Route::group(['middleware'=>'auth' , 'prefix'=>'admin' ], function(){
+
  Route::get('profile', 'adminController@Sitesettings') ;
 Route::resource('admin_Projects','admin_Projects');
 /*************************** Vessels admin ***********************************************/
 Route::resource('admin_Vessels','AdminVesselscontroller');
-/*
-Route::get('All_Vessels', 'adminController@All_Vessels') ;
-Route::get('add_Vessels', 'adminController@add_Vessels') ;
-Route::post('add_Vessels_save', 'adminController@add_Vessels_save') ;
-Route::get('update_Vessels/{id}', 'adminController@update_Vessels') ;
-Route::post('update_Vessels_save/{id}', 'adminController@update_Vessels_save') ;
-Route::post('destroy/{id}', 'adminController@destroy') ;*/
-
      /******************************* news admin *******************************************/
 Route::get('All_news', 'admin_news_Controller@All_news') ; 
 Route::get('add_news', 'admin_news_Controller@add_news') ;

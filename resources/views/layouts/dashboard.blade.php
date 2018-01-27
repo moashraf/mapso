@@ -47,18 +47,18 @@
                              
                             <!-- /input-group -->
                         </li>
-                        <li {{ (Request::is('/profile') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('/profile') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <li {{ (Request::is('admin/profile') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('admin/profile') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                        
                          <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i>  Our Vessels   <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('admin_Vessels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin_Vessels') }}">  All </a>
+                                <li {{ (Request::is('admin/admin_Vessels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_Vessels') }}">  All </a>
                                 </li>
-								<li {{ (Request::is('admin_Vessels/create') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin_Vessels/create') }}">  Add </a>
+								<li {{ (Request::is('admin/admin_Vessels/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_Vessels/create') }}">  Add </a>
                                 </li>
                                  
                             </ul>
@@ -191,11 +191,11 @@
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Projects <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('admin_Projects') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin_Projects') }}">  All </a>
+                                <li {{ (Request::is('admin/admin_Projects') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_Projects') }}">  All </a>
                                 </li>
-                                <li {{ (Request::is('admin_Projects/create') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin_Projects/create') }}">  Add </a>
+                                <li {{ (Request::is('admin/admin_Projects/create') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/admin_Projects/create') }}">  Add </a>
                                 </li>
                                  
                             </ul>

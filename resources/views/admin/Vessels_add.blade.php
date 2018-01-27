@@ -1,11 +1,11 @@
 @extends ('layouts.dashboard')
 @section('page_heading','Vessels')
-
 @section('section')
 <div class="col-sm-12">
+
 <div class="row">
-    <div class="col-lg-6">
-                          {{ Form::open(array('url' => 'add_Vessels_save', 'files' => true,'enctype' => 'multipart/form-data'))}}
+    <div class="col-lg-12">
+       {{ Form::open(array('url' => 'admin/admin_Vessels', 'files' => true,'enctype' => 'multipart/form-data'))}}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group" >
@@ -37,8 +37,9 @@
                 <input class="form-control" placeholder=" Max Speed"  name="Speed"  required="required"  >
             </div>
             <div class="form-group">
-                 
-                <li class="dropdown">
+
+                <li class="dropdown">                                  <label> Application  </label>
+
        <div class="form-group SingleBoat_filters ">
                         <select name="Application" class="form-control" name="Application" required="required"  >
                             <option value="Application">   Application</option>
@@ -70,8 +71,8 @@
              </div>
             
             	<div class="form-group">
-                <label> VIDO</label>
-                <input class="form-control" placeholder=" VIDO" name="VIDO"  required="required"   >
+                <label> vidoe</label>
+                <input   type="url" class="form-control" placeholder=" vidoe" name="VIDO"  required="required"   >
             </div>
             
             
@@ -111,7 +112,7 @@
 				
 	     		    @foreach($boats_cat as $Boats1)
 
-                            <option value="{{ $Boats1 }}">  {{ $Boats1 }}    </option>
+                            <option value="{{ $Boats1->id }}">  {{ $Boats1->boats_cat_text }}    </option>
                           
  						
 						     @endforeach
