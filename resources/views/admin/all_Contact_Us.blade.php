@@ -37,13 +37,18 @@
 			<td>{{ $Boats1->mail }}</td>
 
 			<td>  
-                <iframe src=" {{ $Boats1->map_link  }} " width="200" height="150" frameborder="0" style="border:0" allowfullscreen></iframe> 
+                <iframe src=" {{ $Boats1->map_link  }} " width="100" height="130" frameborder="0" style="border:0" allowfullscreen></iframe> 
 </td>
   
 						<td>
-  {{ Form::open(array('url' => 'destroy_Contact_Us/' . $Boats1->id, 'class' => 'pull-right')) }}
+  {{ Form::open(array('url' => 'admin/admin_Contact_Us/' . $Boats1->id, 'class' => 'pull-right')) }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                                          {{ method_field('DELETE') }}
+
                 {{ Form::close() }}
+<br>
+    <a class=" btn btn-warning " href="{{ URL::to('admin/admin_Contact_Us/'. $Boats1->id.'/edit/' ) }}">Edite</a>
+
    </td>
 
 		</tr>

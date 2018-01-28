@@ -34,10 +34,11 @@
  
             
   						<td>
-  {{ Form::open(array('url' => 'destroy_testimonial/' . $Boats1->id, 'class' => 'pull-right')) }}
-                    {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
-                {{ Form::close() }}
-         <a class=" btn btn-warning    " href="{{ URL::to('update_testimonial/'. $Boats1->id ) }}">Edite</a>
+  {{ Form::open(array('url' => 'admin/admin_testimonial/' . $Boats1->id, 'class' => 'pull-right')) }}
+                    {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}                               
+                                 				{{ Form::hidden ('_method', 'Delete' ) }}
+               {{ Form::close() }}
+         <a class=" btn btn-warning    " href="{{ URL::to('admin/admin_testimonial/'. $Boats1->id.'/edit/' ) }}">Edite</a>
       
                             
  </td>

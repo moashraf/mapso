@@ -11,9 +11,9 @@ class Boats_catSeeder extends Seeder
      */
     public function run()
     {
-for ($i=0; $i <4 ; $i++) { 
+for ($i=0; $i <6 ; $i++) { 
 $add=new Boats_cat;
- $add->boats_cat_text="NanoAir".rand(0,9);
+ $add->boats_cat_text="NanoAir".rand(0,60);
  $add->save();
 }
     }

@@ -10,29 +10,30 @@
 
 		  <table class="table table table-hover">
 	<thead>
-		<tr  >
+		<tr>
 			<th style=" text-align: center;" >Title</th>
 			<th style=" text-align: center;" >content</th>
 			<th style=" text-align: center;" >Photos</th>
 		    <th style=" text-align: center;" >action</th>
-
 		</tr>
 	</thead>
 	<tbody style=" text-align: center;">
 	    
-	     		    @foreach($Boats as $Boats1)
+	     		    @foreach($Services as $Services1)
 
 		<tr>
-			<td>{{ $Boats1->titel_Services }}</td>
-			<td>{{ $Boats1->details }}</td>
-			<td>  <img src="{{ URL::to('').'/'.$Boats1->img  }}"   height="100" width="150">  </td>
+			<td>{{ $Services1->titel_Services }}</td>
+			<td>{{ $Services1->details }}</td>
+			<td>  <img src="{{ URL::to('').'/'.$Services1->img  }}"   height="100" width="150">  </td>
   
 						<td>
-  {{ Form::open(array('url' => 'destroy_Services/' . $Boats1->id, 'class' => 'pull-right')) }}
+  {{ Form::open(array('url' => 'admin/admin_Services/' . $Services1->id, 'class' => 'pull-right')) }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                                            				{{ Form::hidden ('_method', 'Delete' ) }}
+
                 {{ Form::close() }}
  
-                <a class=" btn btn-warning    " href="{{ URL::to('update_Services/'. $Boats1->id ) }}">Edite</a>
+                <a class=" btn btn-warning    " href="{{ URL::to('admin/admin_Services/'.$Services1->id.'/edit' ) }}">Edite</a>
 
  
 
@@ -47,7 +48,7 @@
 
 
      
-     {{ $Boats->links() }}
+     {{ $Services->links() }}
 
      
  </div>

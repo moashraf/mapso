@@ -5,9 +5,8 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-                          {{ Form::open(array('url' => 'add_Boats_cat_save', 'files' => true,'enctype' => 'multipart/form-data'))}}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
-
+                          {{ Form::open(array('url' => 'admin/admin_Boats_cat', 'files' => true,'enctype' => 'multipart/form-data'))}}
+ 
             <div class="form-group" >
                 <label> Title  </label>
                 <input class="form-control" placeholder="   Title" name="Title" required="required"   >

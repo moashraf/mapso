@@ -38,7 +38,7 @@
 
 
 						<td>
- 				    {{ Form::open(array('url' => 'admin_Projects/destroy/'.$Projects1->id , 'class' => 'pull-right')) }}
+ 				    {{ Form::open(array('url' => 'admin/admin_Projects/destroy/'.$Projects1->id , 'class' => 'pull-right')) }}
  
                     {{ Form::submit('Delete ' , array('class' => 'btn btn-danger ')) }}
 

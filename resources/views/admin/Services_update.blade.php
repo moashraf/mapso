@@ -5,9 +5,9 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-   						   <?php echo Form::open(array('url' => array('update_Services_save', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
+   						   <?php echo Form::open(array('url' => array('admin/admin_Services', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
 
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+ {{ method_field('PUT') }}
 
             <div class="form-group" >
                 <label> Title  </label>
@@ -16,7 +16,7 @@
 		  
 			<div class="form-group">
                 <label> photo  </label>
-                                <input type="file"    name="photo"   >
+              <input type="file"    name="photo"   >
              </div>
 		  <div class="form-group">
                 <label> details </label>

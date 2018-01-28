@@ -5,9 +5,21 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-                          {{ Form::open(array('url' => 'add_Contact_Us_save', 'files' => true,'enctype' => 'multipart/form-data'))}}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+           @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+                          {{ Form::open(array('url' => 'admin/admin_Contact_Us', 'files' => true,'enctype' => 'multipart/form-data'))}}
+ 
             <div class="form-group" >
                 <label> Title  </label>
                 <input class="form-control" placeholder="   Title" name="Title" required="required"   >
@@ -34,7 +46,7 @@
             </div>
             <div class="form-group" >
                 <label> map  </label>
-                <input class="form-control" placeholder="   map" name="map" required="required"   >
+                <input class="form-control" placeholder="   map" name="map" required="required" type="url"   >
             </div>
           
 		 <br>

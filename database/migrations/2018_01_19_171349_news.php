@@ -18,7 +18,7 @@ class News extends Migration
             $table->timestamps();
             $table->string('Title', 200);
             $table->text('content', 200);
-            $table->string('cat', 200);
+            $table->string('cat', 200)->nullable()->default('ashraf');
             $table->string('img', 255);
   
         });

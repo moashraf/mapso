@@ -5,12 +5,11 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-                          {{ Form::open(array('url' => 'add_subscribe_save', 'files' => true,'enctype' => 'multipart/form-data'))}}
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
-
+   {{ Form::open(array('url' => 'admin/admin_subscribe',  'enctype' => 'multipart/form-data'))}}
+ 
             <div class="form-group" >
                 <label> email  </label>
-                <input class="form-control" placeholder="   email" name="email" required="required"   >
+                <input class="form-control" placeholder="email" name="email" required="required" type="email"  >
             </div>
           
 		 <br>

@@ -15,10 +15,10 @@ class Boatsseeder extends Seeder
 
 
 
-  for ($i=0; $i <10 ; $i++) { 
+  for ($i=0; $i <15 ; $i++) { 
 $add=new Boats;
 
-$add->Boatscat='2';
+$add->Boatscat='1';
 $add->Boatsname="   NanoAir tag".rand(0,9);
 $add->Boatsimg="wp-content/uploads/2017/05/Layer-18.jpg";
 $add->Boats_logo="wp-content/uploads/2017/05/logo.png";

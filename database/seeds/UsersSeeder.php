@@ -17,8 +17,7 @@ $add=new User;
 $add->name="figoashraf";
 $add->email="figoashraf@gmail.com";
 $add->password= bcrypt("figoashraf");
- 
-
+$add->api_token = str_random(70);
 $add->save();
 }
     }

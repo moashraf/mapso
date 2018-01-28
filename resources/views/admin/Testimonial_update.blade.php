@@ -5,11 +5,20 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-   						   <?php echo Form::open(array('url' => array('update_testimonial_save', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
+         @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+   			   <?php echo Form::open(array('url' => array('admin/admin_testimonial', $Boats['id'] )    ,'files' => true,'enctype' => 'multipart/form-data'              )) ?>
 
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+ 
+        {{ method_field('PUT') }}
 
-        
         
             <div class="form-group" >
                 <label> tag  </label>

@@ -29,8 +29,9 @@
 
             
   						<td>
-  {{ Form::open(array('url' => 'destroy_About_Us/' . $Boats1->id, 'class' => 'pull-right')) }}
+  {{ Form::open(array('url' => 'admin/admin_About_Us/' . $Boats1->id, 'class' => 'pull-right')) }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                        				{{ Form::hidden ('_method', 'Delete' ) }}
                 {{ Form::close() }}
  </td>
 

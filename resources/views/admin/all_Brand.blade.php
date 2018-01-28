@@ -23,8 +23,10 @@
 		<tr>
  			<td>  <img src="{{ URL::to('').'/'.$Boats1->imgurl  }}"   height="100" width="150">  </td>
   						<td>
-  {{ Form::open(array('url' => 'destroy_Brand/' . $Boats1->id, 'class' => 'pull-right')) }}
+  {{ Form::open(array('url' => 'admin/admin_Brand/'. $Boats1->id, 'class' => 'pull-right')) }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-danger ')) }}
+                        				{{ Form::hidden ('_method', 'Delete' ) }}
+
                 {{ Form::close() }}
  </td>
 

@@ -5,7 +5,7 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
-                          {{ Form::open(array('url' => 'add_About_Us_save', 'files' => true,'enctype' => 'multipart/form-data'))}}
+                          {{ Form::open(array('url' => 'admin/admin_About_Us', 'enctype' => 'multipart/form-data'))}}
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group" >

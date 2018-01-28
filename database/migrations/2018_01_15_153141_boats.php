@@ -19,7 +19,7 @@ class Boats extends Migration
             $table->string('Boatsname', 200);
             $table->text('Boatsimg', 200);
             $table->integer('Boatscat')->unsigned();
-            $table->foreign('Boatscat')->references('id')->on('boats_cat')->onDelete('cascade');
+            $table->foreign('Boatscat')->references('id')->on('boats_cat');
             $table->string('Boats_logo', 200);
             $table->string('Hull_Material', 200);
             $table->string('Length_Overall', 200);
