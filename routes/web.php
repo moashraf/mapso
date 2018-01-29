@@ -1,4 +1,5 @@
 <?php
+Route::pattern('id', '[0-9]+');
 Route::get('/', 'landingPageController@home');
 Route::get('/main', 'sitesettingsController@home');
 Route::resource('facebook', 'facebookController');
@@ -10,11 +11,11 @@ Route::get('/AboutUs', 'AboutUsController@AboutUs');
 Route::get('/Services', 'ServicesController@Services');
 Route::get('/ContactUs', 'ContactUsController@home');
 Route::get('/TESTIMONIALS', 'TESTIMONIALSController@home');
-Route::get('/References', 'boatsController@References');
+//Route::get('/References', 'boatsController@References');
+//Route::get('/SingleBoat_cat/{cat}', 'boatsController@getcat');
 Route::get('/Boats', 'boatsController@home');
 Route::get('/filters/{id}', 'boatsController@filters');
-Route::get('/SingleBoat/{id}', 'boatsController@get1');
-Route::get('/SingleBoat_cat/{cat}', 'boatsController@getcat');
+Route::get('/SingleBoat/{id}/{getcat?}', 'boatsController@get1')->where(['getcat' => '[0-9]+']);
 Route::get('/Propulsion', 'propulsionController@home');
 Route::get('/BRANDS', 'brandController@home');
 Route::get('/allnews', 'newsController@getallnews');

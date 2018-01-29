@@ -10,8 +10,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		 @foreach($getallnews as $hero)
-
-  
+ 
    <script language="Javascript">
   var msg1 = " Welcome to Mapso  ";
   var speed=500;
@@ -112,21 +111,29 @@
 
   <ul>
  
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu"><a  href="{{ URL::to('/Services')}}">Services </a> </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a  href="{{ URL::to('/Boats')}}">Our Vessels </a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu"><a  href="{{ URL::to('/Propulsion')}}">Propulsion   </a> </li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu"><a  href="{{ URL::to('/R&D ')}}"> R&D   </a> </li>   
-<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a  href="{{ URL::to('/References')}}">References   </a>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu">
+  <a  href="{{ URL::to('/Services')}}">Services </a> </li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+  <a  href="{{ URL::to('/Boats')}}">Our Vessels </a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu">
+  <a  href="{{ URL::to('/Propulsion')}}">Propulsion   </a> </li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children submenu">
+  <a  href="#"> R&D   </a> </li>   
+<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+  <a  href="#">References   </a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a href="{{ URL::to('/TESTIMONIALS')}}">Testimonials</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a href="{{ URL::to('/Projects')}}">Projects </a></li>
- 
-	 
-</ul>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+    <a href="{{ URL::to('/TESTIMONIALS')}}">Testimonials</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+    <a href="{{ URL::to('/Projects')}}">Projects </a></li>
+ 	 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a  href="{{ URL::to('/allnews')}}">News </a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a  href="{{ URL::to('/BRANDS')}}">Brands   </a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page submenu"><a  href="{{ URL::to('/ContactUs')}}">Contact Us   </a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+  <a  href="{{ URL::to('/allnews')}}">News </a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+  <a  href="{{ URL::to('/BRANDS')}}">Brands   </a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page submenu">
+  <a  href="{{ URL::to('/ContactUs')}}">Contact Us   </a></li>
 
  </ul>
                                     <!-- Search Icon -->

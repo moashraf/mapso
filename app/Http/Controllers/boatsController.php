@@ -8,6 +8,8 @@ use App\Sitesettings;
 use App\Singleboatgallery;
 use DB;
 
+use App\Boats_cat;
+
 class boatsController extends Controller
 {
 
@@ -15,11 +17,8 @@ class boatsController extends Controller
     {
 
         $slider = Slider::all();
-
         $References = Boats::limit(20)->get();
-
-        $flight = Sitesettings::all();
-
+        $flight = Sitesettings::limit(1)->get();
         return view('References', ['References' => $References, 'getallnews' => $flight, 'slider' => $slider]);
 
     }
@@ -31,7 +30,6 @@ class boatsController extends Controller
         $boats_cat = DB::table('boats_cat')->pluck('boats_cat_text');
 
         $Brand = "";
-
         if (isset($_GET["Series"]))
         {
             $Brand = htmlspecialchars($_GET["Series"]);
@@ -43,54 +41,49 @@ class boatsController extends Controller
             'date-to' => "fgf",
         ));
         $slider = Slider::all();
-        $flight = Sitesettings::all();
+        $flight = Sitesettings::limit(1)->get();
 
         return view('SingleBoat', ['SingleBoat' => $SingleBoat, 'boats_cat' => $boats_cat, 'getallnews' => $flight, 'slider' => $slider, 'cat' => $cat]);
-
     }
 
     /****************************************************************************************************/
 
-    public function get1($id)
+    public function get1($id , $getcat=null)
     {
+if($getcat!==null){
 
-        $SingleBoat = Boats::where('id', "$id")->get();
-        $getcat = ($SingleBoat[0]->Boatscat);
+         $cat = Boats::where('Boatscat', "$getcat")->paginate(2);
+        if($cat->isEmpty()) { return back(); }
+         $SingleBoat = Boats::where('Boatscat', "$getcat")->first();
+  }
+ else  {
+  $SingleBoat = Boats::where('id', "$id")->first();
+ //dd(  $SingleBoat);
+        $getcat = ($SingleBoat->Boatscat);
         $cat = Boats::where('Boatscat', "$getcat")->paginate(2);
-        $flight = Sitesettings::all();
-
-        return view('SingleBoat', ['SingleBoat' => $SingleBoat, 'getallnews' => $flight, 'cat' => $cat]);
-
-    }
-
-    /****************************************************************************************************/
-
-    public function getcat($cat)
-    {
-
-        $boats_cat = DB::table('boats_cat')->pluck('boats_cat_text');
-        $slider = Slider::all();
-        $cat = Boats::where('Boatscat', "$cat")->paginate(2);
-        $getid = ($cat[0]->id);
-        $SingleBoat = Boats::where('id', "$getid")->get();
-        $flight = Sitesettings::all();
-        $nodata = "No data";
-        return view('SingleBoat', ['SingleBoat' => $SingleBoat, 'getallnews' => $flight, 'boats_cat' => $boats_cat, 'slider' => $slider, 'cat' => $cat, 'nodata' => $nodata]);
+}
+             
+        $flight = Sitesettings::limit(1)->get();
+        $all_cat = Boats_cat::limit(15)->get();
+        return view('SingleBoat',
+         [
+         'SingleBoat' => $SingleBoat, 
+         'getallnews' => $flight, 
+         'cat' => $cat,
+         'all_cat' => $all_cat,
+         ]);
 
     }
 
     /****************************************************************************************************/
+
 
     public function home()
     {
 
-        $slider = Slider::all();
-
-        $Boats = Boats::paginate(12);
-
-        $flight = Sitesettings::all();
-
-        return view('boats', ['Boats' => $Boats, 'getallnews' => $flight, 'slider' => $slider]);
+         $Boats = Boats::paginate(12);
+        $flight = Sitesettings::limit(1)->get();
+        return view('boats', ['Boats' => $Boats, 'getallnews' => $flight ]);
 
     }
 
