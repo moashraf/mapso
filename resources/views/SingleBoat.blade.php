@@ -5,7 +5,7 @@
    <div id="flexslider-nav" class="fullpage-wrap small ">
       <ul class="slides">
          
-         <li style="background-image:url(    {{ URL::to('/').'/'.$SingleBoat->Boatsimg  }}     )">
+         <li style="background-image:url(    {{ URL::to('/').'/'.$SingleBoat->id  }}     )">
             <div class="container text" style="    top: 85%; ">
                <h5 class="   SingleBoat_h2">  <img src="{{ URL::to('/').'/'.$SingleBoat->Boats_logo  }} " style=" width: 80%;">
                </h5>
@@ -101,7 +101,7 @@
                   <li class="dropdown">
                      <div class="form-group SingleBoat_filters ">
                         <select name="Application" class="form-control">
-                           <option value="Application">   Application</option>
+                           <option value="Barge_Boat">   Barge_Boat</option>
                            <option value="Fishing_Vessels"> Fishing Vessels  </option>
                            <option value="Barge_Boat">   Barge Boat</option>
                            <option value="Conventional_Tug">   Conventional Tug</option>
@@ -184,7 +184,7 @@
                               <div class="single-news one-item horizontal-news" style="position: absolute; left: 0px; top: 0px;">
                                  <article style="        box-shadow: none;  background: #e1e4e5;">
                                     <div class="col-md-6 padding-leftright-null" style="    width: 37%;">
-                                       <img  class="image" style="    height: 229px; border-radius: 23px; background-image:url()" src="{{URL::to('/')}}/{{$SingleBoat2->Boatsimg}} " alt="">
+                                       <img  class="image" style="    height: 229px; border-radius: 23px; background-image:url()" src="{{URL::to('/')}}/{{$SingleBoat2->Boatsimg }} " alt="">
                                        <img style="           width: 54%;   padding-top: 20px;
                                           margin: auto;" src="{{ URL::to('/').'/'.$SingleBoat->Boats_logo  }}" alt="">
                                     </div>

@@ -25,25 +25,35 @@ class boatsController extends Controller
 
     /****************************************************************************************************/
 
-    public function filters($id)
+    public function filters($id , Request $request)
     {
-        $boats_cat = DB::table('boats_cat')->pluck('boats_cat_text');
 
-        $Brand = "";
-        if (isset($_GET["Series"]))
+   $nodata="No Data";
+         $Application = "";
+if ($request->has('Application')) 
+
+      
         {
-            $Brand = htmlspecialchars($_GET["Series"]);
-        }
-        $SingleBoat = Boats::where('id', "$id")->get();
-        $cat = Boats::where('Boatscat', "$Brand")->paginate(2);
+       $Application = $request->input('Application');
+       $SingleBoat =  Boats::find($id);
+        $all_cat = Boats_cat::limit(15)->get();
+    }
+        $cat = Boats::where('Application', "$Application")->paginate(2);
         $cat->appends(array(
-            'Series' => "$Brand",
+            'Application' => "$Application",
             'date-to' => "fgf",
         ));
-        $slider = Slider::all();
-        $flight = Sitesettings::limit(1)->get();
+                  // dd($cat);
 
-        return view('SingleBoat', ['SingleBoat' => $SingleBoat, 'boats_cat' => $boats_cat, 'getallnews' => $flight, 'slider' => $slider, 'cat' => $cat]);
+         $flight = Sitesettings::limit(1)->get();
+
+        return view('SingleBoat', [
+            'SingleBoat' => $SingleBoat,   
+            'getallnews' => $flight,  
+             'cat' => $cat ,
+             'nodata' => $nodata ,
+            'all_cat' => $all_cat
+         ]);
     }
 
     /****************************************************************************************************/
