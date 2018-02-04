@@ -29,31 +29,46 @@ class boatsController extends Controller
     {
 
    $nodata="No Data";
-         $Application = "";
+       
 if ($request->has('Application')) 
 
       
         {
+
        $Application = $request->input('Application');
+       $Series = $request->input('Series');
+       $Market = $request->input('Market');
+          $Brand = $request->input('Brand'); 
+       //dd( $Brand);
+        $cat = Boats::where('Application', "$Application")
+         ->where(function($q) use ($Brand ) {
+          $q->where('Boatscat', $Brand);
+             }) ->paginate(2);
+       $cat->appends(array(
+            'Application' => "$Application",
+            'Series' => "$Series",
+            'Market' => "$Market",
+            'Brand' => "$Brand",
+         ));
        $SingleBoat =  Boats::find($id);
         $all_cat = Boats_cat::limit(15)->get();
-    }
-        $cat = Boats::where('Application', "$Application")->paginate(2);
-        $cat->appends(array(
-            'Application' => "$Application",
-            'date-to' => "fgf",
-        ));
-                  // dd($cat);
-
-         $flight = Sitesettings::limit(1)->get();
+        $flight = Sitesettings::limit(1)->get();
 
         return view('SingleBoat', [
             'SingleBoat' => $SingleBoat,   
             'getallnews' => $flight,  
-             'cat' => $cat ,
-             'nodata' => $nodata ,
+            'cat' => $cat ,
+            'nodata' => $nodata ,
             'all_cat' => $all_cat
          ]);
+
+    }else{
+
+    return redirect('/');
+    }
+                  // dd($cat);
+
+         
     }
 
     /****************************************************************************************************/

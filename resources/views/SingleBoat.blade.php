@@ -5,7 +5,7 @@
    <div id="flexslider-nav" class="fullpage-wrap small ">
       <ul class="slides">
          
-         <li style="background-image:url(    {{ URL::to('/').'/'.$SingleBoat->id  }}     )">
+         <li style="background-image:url(    {{ URL::to('/').'/'.$SingleBoat->Boatsimg  }}     )">
             <div class="container text" style="    top: 85%; ">
                <h5 class="   SingleBoat_h2">  <img src="{{ URL::to('/').'/'.$SingleBoat->Boats_logo  }} " style=" width: 80%;">
                </h5>
@@ -100,8 +100,8 @@
                <form  action=" {{ URL::to('/filters').'/'.$SingleBoat->id  }}  " class="filters_form"   role="search">
                   <li class="dropdown">
                      <div class="form-group SingleBoat_filters ">
-                        <select name="Application" class="form-control">
-                           <option value="Barge_Boat">   Barge_Boat</option>
+                        <select name="Application" class="form-control" required >
+                           <option value="">   Application</option>
                            <option value="Fishing_Vessels"> Fishing Vessels  </option>
                            <option value="Barge_Boat">   Barge Boat</option>
                            <option value="Conventional_Tug">   Conventional Tug</option>
@@ -124,23 +124,26 @@
                   <li class="dropdown">
                      <div class="form-group SingleBoat_filters ">
                         <select name="Series" class="form-control">
-                            <option value=" ">  fgfgf   </option>
+                            <option value="">  Series   </option>
                          </select>
                      </div>
                   </li>
                   <li class="dropdown">
                      <div class="form-group SingleBoat_filters ">
                         <select name="Market" class="form-control">
-                           <option value="DESC">   Market</option>
-                           <option value="ASC">Market</option>
-                        </select>
+                           <option value="">   Market</option>
+                         </select>
                      </div>
                   </li>
                   <li class="dropdown">
                      <div class="form-group SingleBoat_filters ">
                         <select name="Brand" class="form-control">
-                           <option value="Brand">  Brand</option>
-                           <option value="Brand">  Brand</option>
+                           <option value="">  Brand</option>
+                         @foreach($all_cat as $all_cat_val)
+  <option value="{{$all_cat_val->id}}">  {{  $all_cat_val->boats_cat_text }} </option>
+ 
+                           @endforeach
+
                         </select>
                      </div>
                   </li>
@@ -160,14 +163,7 @@
                   </div>
                </form>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-               <div class="form-group SingleBoat_filters ">
-                  <select name="popularity" class="form-control">
-                     <option value="DESC">Date </option>
-                     <option value="ASC">Date </option>
-                  </select>
-               </div>
-            </ul>
+           
                     </div>
          <!-- /.navbar-collapse -->
       </nav>
